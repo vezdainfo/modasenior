@@ -1,0 +1,52 @@
+
+/* style.css - design clássico, foco em acessibilidade */
+:root{
+  --bg:#f3efe9;
+  --card:#ffffff;
+  --accent:#2b4d63;
+  --text:#222222;
+  --muted:#555555;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: Georgia, 'Times New Roman', Times, serif;background:var(--bg);color:var(--text);font-size:18px;}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1000px;margin:0 auto;padding:20px;}
+.header{display:flex;align-items:center;gap:20px;padding:10px 0}
+.header img{height:70px;}
+nav{margin-left:auto;}
+nav ul{list-style:none;display:flex;gap:12px;padding:0;margin:0;}
+nav a{padding:8px 12px;border-radius:6px;display:inline-block;}
+nav a:focus, nav a:hover{outline:3px solid #ffd;box-shadow:0 0 0 3px rgba(43,77,99,0.12)}
+
+
+.skiplink{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
+.skiplink:focus{position:static;left:0;height:auto;background:#fff;padding:8px;border:2px solid var(--accent);z-index:1000;}
+
+.hero{background:linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)), url('../imagens/hero.jpg') center/cover;padding:30px;border-radius:8px;margin:16px 0;display:flex;align-items:center;justify-content:space-between;}
+.hero h1{font-size:32px;margin:0;}
+.hero p{max-width:60%;line-height:1.4}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--card);padding:12px;border-radius:8px;border:1px solid #e6e0da}
+.card img{width:100%;height:auto;border-radius:6px}
+.card h3{margin:10px 0 6px 0;font-size:20px}
+.card p{margin:0;color:var(--muted)}
+
+/* focus styles for accessibility */
+:focus{outline:3px solid #ffd;box-shadow:0 0 0 3px rgba(43,77,99,0.12)}
+
+footer{margin-top:30px;padding:20px 0;color:var(--muted);font-size:15px;border-top:1px solid #e6e0da}
+
+/* simple responsive */
+@media(max-width:600px){
+  .header img{height:56px;}
+  .hero{flex-direction:column;gap:12px;padding:20px}
+  .hero p{max-width:100%}
+}
+form label{display:block;margin-bottom:6px;font-weight:bold}
+input,textarea,button,select{font-size:16px;padding:10px;border-radius:6px;border:1px solid #ccc;width:100%}
+button{background:var(--accent);color:#fff;border:none;cursor:pointer;padding:10px 14px}
+button:focus{outline:3px solid #ffd;}
+
+/* visual focus ring for keyboard users on interactive elements */
+button:focus, input:focus, textarea:focus, a:focus{outline-offset:3px}
