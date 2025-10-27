@@ -37,6 +37,22 @@ nav a:focus, nav a:hover{outline:3px solid #ffd;box-shadow:0 0 0 3px rgba(43,77,
 
 footer{margin-top:30px;padding:20px 0;color:var(--muted);font-size:15px;border-top:1px solid #e6e0da}
 
+/* focus styles for accessibility (font size)*/
+
+.controle-fonte button {
+  font-size: 16px;
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background-color: #B22222;
+  border-radius: 6px;
+}
+.controle-fonte button:hover {
+  background-color: #696969;
+}
+
+
 /* simple responsive */
 @media(max-width:600px){
   .header img{height:56px;}

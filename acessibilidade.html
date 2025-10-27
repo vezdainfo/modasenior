@@ -1,11 +1,30 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Acessibilidade — Moda Sénior</title><link rel="stylesheet" href="css/style.css" /></head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Acessibilidade — Moda Sênior</title><link rel="stylesheet" href="css/style.css" /></head>
 <body>
 <a class="skiplink" href="#main">Ir para o conteúdo</a>
 <header class="container header">
-  <img src="imagens/logo.png" alt="Logotipo Moda Sénior" />
+  <img src="imagens/logo.png" alt="Logotipo Moda Sênior" />
   <nav aria-label="Menu principal"><ul><li><a href="index.html">Home</a></li><li><a href="produtos.html">Produtos</a></li><li><a href="sobre.html">Sobre Nós</a></li><li><a href="contato.html">Contato</a></li><li><a href="acessibilidade.html">Acessibilidade</a></li></ul></nav>
+    <div class="controle-fonte">
+  <button onclick="alterarFonte('aumentar')">A+</button>
+  <button onclick="alterarFonte('diminuir')">A-</button>
+  <button onclick="alterarFonte('padrao')">A</button>
+</div>
+<script>
+  let tamanhoPadrao = 100; // 100% é o padrão
+
+  function alterarFonte(acao) {
+    if (acao === 'aumentar' && tamanhoPadrao < 150) {
+      tamanhoPadrao += 10;
+    } else if (acao === 'diminuir' && tamanhoPadrao > 80) {
+      tamanhoPadrao -= 10;
+    } else if (acao === 'padrao') {
+      tamanhoPadrao = 100;
+    }
+    document.body.style.fontSize = tamanhoPadrao + '%';
+  }
+</script>
 </header>
 <main id="main" class="container">
   <h1>Política de Acessibilidade</h1>
@@ -16,12 +35,12 @@
     <li>Leitura por voz (botões "Ouvir" em seções e produtos).</li>
     <li>Contraste adequado e tipografia legível.</li>
     <li>Skip link para acessar diretamente o conteúdo principal.</li>
+	<li>Botões de aumentar e diminuir tamanho da fonte, localizados no canto superior direito das páginas.</li>
   </ul>
   <h2>Como usar</h2>
   <p>Use a tecla Tab para navegar pelos links e botões. Para ouvir a descrição de uma página ou produto, pressione o botão "Ouvir".</p>
-  <p>Imagens do site estão disponíveis na pasta <code>/imagens</code> para download e substituição em versões finais.</p>
 </main>
-<footer class="container"><p>&copy; Moda Sénior — 2025.</p></footer>
+<footer class="container"><p>&copy; Moda Sênior — 2025. Projeto Integrador - Centro Universitário SENAC Santo Amaro.</p></footer>
 <script src="js/script.js"></script>
 </body>
 </html>

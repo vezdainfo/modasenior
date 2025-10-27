@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Moda Sénior — Home</title>
+<title>Moda Sênior — Home</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 <a class="skiplink" href="#main">Ir para o conteúdo</a>
 <header class="container header" role="banner">
-  <img src="imagens/logo.png" alt="Logotipo Moda Sénior" />
+  <img src="imagens/logo.png" alt="Logotipo Moda Sênior" />
+
+
   <nav role="navigation" aria-label="Menu principal">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -19,33 +21,53 @@
       <li><a href="acessibilidade.html">Acessibilidade</a></li>
     </ul>
   </nav>
+    <div class="controle-fonte">
+  <button onclick="alterarFonte('aumentar')">A+</button>
+  <button onclick="alterarFonte('diminuir')">A-</button>
+  <button onclick="alterarFonte('padrao')">A</button>
+</div>
+<script>
+  let tamanhoPadrao = 100; // 100% é o padrão
+
+  function alterarFonte(acao) {
+    if (acao === 'aumentar' && tamanhoPadrao < 150) {
+      tamanhoPadrao += 10;
+    } else if (acao === 'diminuir' && tamanhoPadrao > 80) {
+      tamanhoPadrao -= 10;
+    } else if (acao === 'padrao') {
+      tamanhoPadrao = 100;
+    }
+    document.body.style.fontSize = tamanhoPadrao + '%';
+  }
+</script>
+
 </header>
 <main id="main" class="container" role="main">
   <section class="hero" aria-labelledby="hero-title">
     <div>
-      <h1 id="hero-title">Moda Sénior — Roupas pensadas para a terceira idade</h1>
+      <h1 id="hero-title">Moda Sênior — Roupas pensadas para idosos e pessoas com mobilidade reduzida</h1>
       <p>Peças confortáveis, estilosas e fáceis de vestir. Priorizamos tecidos suaves, cortes amplos e peças com fechamento facilitado.</p>
-      <p><button data-tts="A Moda Sénior oferece roupas confortáveis, pensadas especialmente para pessoas idosas.">Ouvir descrição</button></p>
+      <p><button data-tts="Moda Sênior. Roupas pensadas para idosos e pessoas com mobilidade reduzida. Peças confortáveis, estilosas e fáceis de vestir. Priorizamos tecidos suaves, cortes amplos e peças com fechamento facilitado.">Ouvir descrição</button></p>
     </div>
-    <img src="imagens/hero.jpg" alt="Idoso sorrindo, representando conforto e moda" style="max-width:45%;border-radius:6px" />
+    <img src="imagens/hero.jpg" alt="Idosos sorrindo, representando felicidade e conforto" style="max-width:45%;border-radius:6px" />
   </section>
 
   <h2>Produtos em destaque</h2>
   <section class="grid" aria-label="Produtos em destaque">
     <article class="card" role="article">
       <a href="produtos.html#prod1"><img src="imagens/prod1.jpg" alt="Camisa Conforto — manga curta" /></a>
-      <h3>Camisa Conforto</h3>
-      <p>Malha com elasticidade, botões frontais de fácil manuseio.</p>
+      <h3>Camisa Adaptável</h3>
+      <p>Camisa masculina de manga curta adaptável com botões magnéticos.</p>
     </article>
     <article class="card" role="article">
       <a href="produtos.html#prod2"><img src="imagens/prod2.jpg" alt="Calça Conforto — tecido leve" /></a>
-      <h3>Calça Conforto</h3>
-      <p>Cós elástico e tecido antissaliva para facilidade ao vestir.</p>
+      <h3>Calça Cós Elástico</h3>
+      <p>Calça com cós elástico, faixa para amarração no cós, confeccionada em viscose.</p>
     </article>
     <article class="card" role="article">
       <a href="produtos.html#prod3"><img src="imagens/prod3.jpg" alt="Casaco Acolhedor — zíper frontal" /></a>
-      <h3>Casaco Acolhedor</h3>
-      <p>Forro macio, zíper frontal com puxador oversized.</p>
+      <h3>Blusa Para Acamados</h3>
+      <p>Blusa manga longa para acamados e pessoas com mobilidade reduzida.</p>
     </article>
   </section>
 
@@ -53,7 +75,7 @@
 
 </main>
 <footer class="container" role="contentinfo">
-  <p>&copy; Moda Sénior — 2025. Projeto Integrador - Centro Universitário SENAC Santo Amaro.</p>
+  <p>&copy; Moda Sênior — 2025. Projeto Integrador - Centro Universitário SENAC Santo Amaro.</p>
 </footer>
 <script src="js/script.js"></script>
 </body>
